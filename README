@@ -1,0 +1,31 @@
+# Varga Raimond
+315CA
+
+			Elves Glacierfight
+
+		I built the in and out files names with arguments from command line.
+	I allocated and freed memory for most of the arrays I used so I could
+	make the program more efficient from a memory perspective.
+		I used structs to stock informations about the glacier altitudes,
+	gloves, and about elfs. To form the glacier I used the formula for the
+	distance between two points shaping it into a circle by taking a matrix in
+	which I put ERR = -1 outside the circle which represents the glacier.
+	I used another struct to build the scoreboard but also to know which elves
+	were still in the game. I made a function that checks how many elves are on
+	the glacier and I used it every time I executed a command. This way I was
+	able to end the game at anytime if there was only one elf on the glacier.
+	If there should have been more battles in the same move because 3 elves
+	ended up in the same cell I only  simulated one fight because that's what I
+	found out in the ref files, having no other information about this case.
+	I'll present the main idea in executing every command:
+		-MELTDOWN : I just rebuilt the glacier with a smaller radius. I checked if
+		anyone fell down and gave the bonus stamina to the elves;
+		-PRINT_SCOREBOARD: I printed the struct that was keeping track of the score
+		after I sorted it with a bubble sort algorithm;
+		-SNOWSTORM: I extracted every number from the initial one and I checked if
+		any elves were caught in it with the distance formula and applied damage;
+		-MOVE: I checked if the move was possible, and after making the move I
+		checked if there were 2 elves in the same square. If that was the case
+		I simulated the battle reducing their hp until one reached 0 or bellow.
+		With every move I also checked if there were any better gloves available
+	
